@@ -7,3 +7,6 @@
 [submodule "lib/openzeppelin-foundry-upgrades"]
 	path = lib/openzeppelin-foundry-upgrades
 	url = https://github.com/OpenZeppelin/openzeppelin-foundry-upgrades
+[submodule "lib/createx"]
+	path = lib/createx
+	url = https://github.com/pcaversaccio/createx

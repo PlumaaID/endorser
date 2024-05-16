@@ -1,4 +1,5 @@
 [profile.default]
+solc_version = "0.8.24"
 src = "src"
 out = "out"
 libs = ["lib"]
@@ -6,5 +7,13 @@ ffi = true
 ast = true
 build_info = true
 extra_output = ["storageLayout"]
+evm_version = "cancun"
+
+[profile.ci]
+fuzz = { runs = 1_000 }
+verbosity = 4
+
+[rpc_endpoints]
+arbitrum_sepolia = "https://arb-sepolia.g.alchemy.com/v2/${ALCHEMY_ARBITRUM_SEPOLIA_KEY}"
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
