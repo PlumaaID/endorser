@@ -4,9 +4,9 @@ A contract to track digital endorsements according to comercial Mexican law. Thi
 
 ## Deployments
 
-| Network          | Endorser Proxy                             |
-| ---------------- | ------------------------------------------ |
-| Arbitrum Sepolia | 0xf391CE6C3467E21CeF7154c008B2d4520EA8e953 |
+| Network          | ChainID | Endorser Proxy                             |
+| ---------------- | ------- | ------------------------------------------ |
+| Arbitrum Sepolia | 421614  | 0x1166221d7122ca3dA1BF397d850C81933D0ae13c |
 
 ## Installing Foundry
 

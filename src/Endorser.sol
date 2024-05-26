@@ -14,9 +14,11 @@ import {UUPSUpgradeable} from "@openzeppelin/contracts-upgradeable/proxy/utils/U
 /// to mint a new token by providing the hash of the digital document that's endorsed. Privacy is ensured by only tracking
 /// the hash of the document, and not the document itself.
 ///
+/// Approvals are not enabled since there's not regulatory clarity on the matter. Contract may upgrade to enable approvals.
+///
 /// NOTE: Property is tied to regular Ethereum addresses. It's the responsibility of the developer to implement a robust
 /// legal framework to ensure the link between the owner and such address.
-///¸
+///
 /// @custom:security-contact security@plumaa.id
 contract Endorser is
     Initializable,
@@ -25,6 +27,8 @@ contract Endorser is
     Ownable2StepUpgradeable,
     UUPSUpgradeable
 {
+    error UnsupportedOperation();
+
     /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
         _disableInitializers();
@@ -40,6 +44,14 @@ contract Endorser is
 
     function _baseURI() internal pure override returns (string memory) {
         return "https://metadata.plumaa.id/";
+    }
+
+    function _approve(address, uint256, address, bool) internal pure override {
+        revert UnsupportedOperation();
+    }
+
+    function _setApprovalForAll(address, address, bool) internal pure override {
+        revert UnsupportedOperation();
     }
 
     /// @dev Mint a new token for a given hash. This is permissionless since the probability
