@@ -1,5 +1,8 @@
 # Endorser
 
+> [!IMPORTANT]  
+> Project is unmantained. Replaced with [Plumaa ID protocol](https://github.com/PlumaaID/protocol).
+
 A contract to track digital endorsements according to comercial Mexican law. This contract allows for any user to mint a new token by providing the hash of the digital document that's endorsed. Privacy is ensured by only tracking the hash of the document, and not the document itself.
 
 ## Deployments

@@ -43,7 +43,7 @@ contract Endorser is
     }
 
     function _baseURI() internal pure override returns (string memory) {
-        return "https://metadata.plumaa.id/";
+        return "https://api.plumaa.id/endorser/metadata/";
     }
 
     function _approve(address, uint256, address, bool) internal pure override {
@@ -55,7 +55,8 @@ contract Endorser is
     }
 
     /// @dev Mint a new token for a given hash. This is permissionless since the probability
-    /// of hash collisions is negligible.
+    /// of hash collisions is negligible and frontrunning is not a concern since the original
+    /// document can be salted to change the hash.
     function safeMint(address to, bytes32 hash) public {
         _safeMint(to, uint256(hash));
     }
